@@ -303,3 +303,5 @@ $RECYCLE.BIN/
 *.lnk
 overlay_0011.bin
 opcodelist.txt
+overlay_0004.bin
+opcodelist_eos.txt
