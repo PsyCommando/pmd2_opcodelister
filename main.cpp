@@ -189,7 +189,7 @@ void DumpEoS( const string & overlayfname, const string & outfname )
     //  in case I want to re-use this.
     cout<<"\nWriting EoS!\n";
     ofstream            of(outfname);
-    static const size_t LongestString = 35; //Calculate that dynamically one day maybe
+    static const size_t LongestString = 36; //Calculate that dynamically one day maybe
 
     of << "=============================================================\n"
        << "\tScript OpCode List\n"
@@ -200,7 +200,7 @@ void DumpEoS( const string & overlayfname, const string & outfname )
     {
         stringstream sstr;
         sstr <<"\t0x" <<hex <<setfill('0') <<setw(3) <<right <<i <<dec 
-            <<" - " <<setfill(' ') <<setw(LongestString) <<left <<opnames[i] <<", " 
+            <<" - " <<setfill(' ') <<setw(LongestString) <<left <<opnames[i] + "," 
             <<setfill(' ') <<setw(2) <<right
             <<static_cast<short>(entries[i].nbparams)
             <<" params, Unk1: " <<setfill(' ') <<setw(3) <<right  <<static_cast<short>(entries[i].unk1) 
@@ -256,7 +256,7 @@ void DumpEoT( const string & overlayfname, const string & outfname )
     //  in case I want to re-use this.
     cout<<"\nWriting EoT!\n";
     ofstream of(outfname);
-    static const size_t LongestString = 35; //Calculate that dynamically one day maybe
+    static const size_t LongestString = 36; //Calculate that dynamically one day maybe
 
     of << "=============================================================\n"
        << "\tScript OpCode List for EoT\n"
@@ -267,7 +267,7 @@ void DumpEoT( const string & overlayfname, const string & outfname )
     {
         stringstream sstr;
         sstr <<"\t0x" <<hex <<setfill('0') <<setw(3) <<right <<i <<dec <<" - " 
-            <<setfill(' ') <<setw(LongestString) <<left <<opnames[i] <<", " 
+            <<setfill(' ') <<setw(LongestString) <<left <<opnames[i] + ","
             <<setfill(' ') <<setw(2) <<right
             <<static_cast<short>(entries[i].nbparams) <<"\n";
         of << sstr.str();
